@@ -1,0 +1,38 @@
+<org.obiba.opal.core.cfg.OpalConfiguration>
+  <version>
+    <major>4</major>
+    <minor>2</minor>
+    <micro>8</micro>
+    <qualifier></qualifier>
+  </version>
+  <secretKey>3992429a33dfe7add9ed71d0d906ac1d</secretKey>
+  <databasePassword>26e10bda358f720fa2c5c7480a2a24c1bb82e03be1aedc22a7c4e4125846c268ea202d6c6ae019bd3404cd90e5a85c593472aea5</databasePassword>
+  <fileSystemRoot>file://${OPAL_HOME}/fs</fileSystemRoot>
+  <magmaEngineFactory>
+    <extensions>
+      <org.obiba.magma.js.MagmaJsExtension/>
+      <org.obiba.magma.security.MagmaSecurityExtension>
+        <authorizer class="org.obiba.magma.security.shiro.ShiroAuthorizer"/>
+      </org.obiba.magma.security.MagmaSecurityExtension>
+      <org.obiba.magma.xstream.MagmaXStreamExtension/>
+    </extensions>
+    <factories/>
+    <datasources/>
+  </magmaEngineFactory>
+  <extensions>
+    <org.obiba.opal.datashield.cfg.DatashieldConfiguration>
+      <environments>
+        <org.obiba.opal.datashield.DataShieldEnvironment>
+          <type>ASSIGN</type>
+          <methods/>
+        </org.obiba.opal.datashield.DataShieldEnvironment>
+        <org.obiba.opal.datashield.DataShieldEnvironment>
+          <type>AGGREGATE</type>
+          <methods/>
+        </org.obiba.opal.datashield.DataShieldEnvironment>
+      </environments>
+      <options/>
+    </org.obiba.opal.datashield.cfg.DatashieldConfiguration>
+    <org.obiba.opal.search.es.ElasticSearchConfiguration/>
+  </extensions>
+</org.obiba.opal.core.cfg.OpalConfiguration>

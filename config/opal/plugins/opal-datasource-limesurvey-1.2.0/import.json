@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": [
+    {
+      "key": "url",
+      "title": "URL",
+      "type": "string",
+      "pattern": "^jdbc:(mysql|postgresql|mariadb):\/\/[^ ]+$",
+      "description": "A valid jdbc connection url from either mysql, mariadb or postgresql.",
+      "default": "jdbc:mysql://localhost:3306/limesurvey"
+    },
+    {
+      "key": "username",
+      "title": "Username",
+      "type": "string",
+      "description": "Limesurvey database user name."
+    },
+    {
+      "key": "password",
+      "title": "Password",
+      "type": "string",
+      "format": "password",
+      "description": "Limesurvey database user password."
+    },
+    {
+      "key": "prefix",
+      "title": "Prefix",
+      "type": "string",
+      "description": "At LimeSurvey install, SQL tables can be optionally prefixed by a string."
+    },
+    {
+      "key": "properties",
+      "title": "Additional Properties",
+      "type": "string",
+      "format": "textarea",
+      "description": "Format of the string must be \"propertyName1=property1;propertyName2=property2;...\".",
+      "default": "characterEncoding=UTF-8;"
+    }
+  ],
+  "required": [
+    "url", "username"
+  ]
+}

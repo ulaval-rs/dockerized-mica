@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": [
+    {
+      "key": "url",
+      "title": "URL",
+      "type": "string",
+      "description": "REDCap server address."
+    },
+    {
+      "key": "token",
+      "title": "Token",
+      "type": "string",
+      "format": "password",
+      "description": "REDCap access token."
+    },
+    {
+      "key": "id_variable",
+      "title": "Identifier Variable Name",
+      "type": "string",
+      "description": "REDCap variable which values are the entity identifiers."
+    },
+    {
+      "key": "id_prefix",
+      "title": "Identifier Value Prefix",
+      "type": "string",
+      "pattern": "[A-Za-z-_0-9]*",
+      "description": "Accepted prefix characters are: `A-Z` `a-z` `0-9` `-` `_`."
+    },
+    {
+      "key": "id_suffix",
+      "title": "Identifier Value Suffix",
+      "type": "string",
+      "pattern": "[A-Za-z-_0-9]*",
+      "description": "Accepted suffix characters are: `A-Z` `a-z` `0-9` `-` `_`."
+    },
+    {
+      "key": "entity_type",
+      "title": "Entity Type",
+      "type": "string",
+      "default": "Participant"
+    }
+  ],
+  "required": [
+    "url",
+    "token",
+    "id_variable"
+  ]
+}

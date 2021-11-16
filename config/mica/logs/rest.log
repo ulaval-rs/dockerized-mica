@@ -1,0 +1,1 @@
+{"@timestamp":"2021-11-16T21:13:01.882Z","@version":"1","message":"/studies/_rql","logger_name":"org.obiba.mica.web.rest.security.AuditInterceptor","thread_name":"qtp2049040852-53","level":"WARN","level_value":30000,"method":"GET","ip":"172.29.0.1","username":"Anonymous","status":"401"}

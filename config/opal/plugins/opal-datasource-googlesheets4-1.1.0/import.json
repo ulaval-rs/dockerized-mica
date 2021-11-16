@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": [
+    {
+      "key": "spreadsheetId",
+      "title": "Google Spreadsheet ID",
+      "type": "string",
+      "description": "The ID or URL of a publicly shared Google spreadsheet."
+    },
+    {
+      "key": "sheetName",
+      "title": "Sheet Name",
+      "type": "string",
+      "description": "The name of the sheet to import."
+    },
+    {
+      "key": "na",
+      "title": "Missing Values",
+      "type": "string",
+      "description": "A comma separated list of double-quoted strings to be considered as missing. Example: \"NONE\",\"INFINITY\",\"999\""
+    },
+    {
+      "key": "skip",
+      "title": "Skip",
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of lines to skip before reading data."
+    },
+    {
+      "key": "id",
+      "title": "Identifier Column Name",
+      "type": "string",
+      "default": "id",
+      "description": "Name of the column containing the IDs"
+    },
+    {
+      "key": "entity_type",
+      "title": "Entity Type",
+      "type": "string",
+      "default": "Participant",
+      "description": "Specify what these data relate to (Participant, Instrument, Area etc.)"
+    }
+  ],
+  "required": [
+    "spreadsheetId",
+    "sheetName"
+  ]
+}

@@ -1,0 +1,6 @@
+target/
+.env
+src/
+build/
+!build/Dockerfile
+!build/entrypoint.sh
