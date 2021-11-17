@@ -28,11 +28,14 @@ COPY /bin /opt/mica/bin
 RUN chmod +x -R /opt/mica/bin; \
     chown -R mica /opt/mica; \
     chown -R mica /srv; \
+    chmod -R 777 /srv; \
     chmod +x /usr/share/mica2/bin/mica2
 WORKDIR $MICA_HOME
 
 VOLUME $MICA_HOME
 EXPOSE 8082 8445
+
+USER mica
 
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/bin/bash" ,"/docker-entrypoint.sh"]

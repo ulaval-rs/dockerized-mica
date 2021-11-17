@@ -5,16 +5,16 @@
     <micro>8</micro>
     <qualifier></qualifier>
   </version>
-  <secretKey>3992429a33dfe7add9ed71d0d906ac1d</secretKey>
-  <databasePassword>26e10bda358f720fa2c5c7480a2a24c1bb82e03be1aedc22a7c4e4125846c268ea202d6c6ae019bd3404cd90e5a85c593472aea5</databasePassword>
+  <secretKey>c65797fb275c052e4c541704dcde9bd8</secretKey>
+  <databasePassword>cf9b4bdda7bfdac51b8b82618cbdc88ed90b705fb93f27a45581335dfe9426273195ea8630439bfde39d83728c201e81d460091c</databasePassword>
   <fileSystemRoot>file://${OPAL_HOME}/fs</fileSystemRoot>
   <magmaEngineFactory>
     <extensions>
       <org.obiba.magma.js.MagmaJsExtension/>
+      <org.obiba.magma.xstream.MagmaXStreamExtension/>
       <org.obiba.magma.security.MagmaSecurityExtension>
         <authorizer class="org.obiba.magma.security.shiro.ShiroAuthorizer"/>
       </org.obiba.magma.security.MagmaSecurityExtension>
-      <org.obiba.magma.xstream.MagmaXStreamExtension/>
     </extensions>
     <factories/>
     <datasources/>

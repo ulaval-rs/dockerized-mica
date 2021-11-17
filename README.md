@@ -1,4 +1,5 @@
 # Dockerized Environment for mica2
+Tested with docker 20.10.8 build 3967b7d and compose 1.29.2, build 5becea4c
 
 ## Usage
 ### Clone the necessary repositories
@@ -16,6 +17,7 @@
 * agate is at -> `localhost:8871` (default user is administrator:password)
 
 ### Configure the apps WIP
+* TODO: `sudo chmod -R 777 config/*` until I figure out how to do this automatically
 * go to agate's application config for mica [here](http://localhost:8871/admin#/application/mica/edit)
 * click on "Generate Key", and copy it to agate.application.key in config/mica/conf/application.yml (replacing "changeit")
 
@@ -27,5 +29,29 @@ Not that on the first run, mica's, opal's and agate's configs are created inside
 On a sidenote, the gitignore is configured to ignore the src/ and build/ folders with the exception of the build/'s Dockerfile and entrypoint. This is because the build/ folder is created by the build.sh script, and the src/ folder is created by the setup.sh script.
 
 ## How to clean
-* to clean the current configuration, delete all folders inside config/, docker compose down then docker compose up
+* to clean the current configuration, delete all folders inside config/, docker compose down then docker compose up a new setup
 * to rebuild, simply execute build.sh again
+
+## Alternative build process (without docker)
+Prerequisites:
+```bash
+sudo mkdir -p /root/.nvm
+sudo apt-get update && \
+    apt-get install -y --no-install-recommends devscripts debhelper build-essential fakeroot && \
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash && \
+    source /root/.nvm/nvm.sh && \
+    nvm install 14.17.6 && \
+    npm install -g bower grunt && \
+    echo '{ "allow_root": true }' > $HOME/.bowerrc
+```
+Build the project:
+```bash
+cd src/mica2
+source $NVM_DIR/nvm.sh; \
+    mvn clean install && \
+    mvn -Prelease org.apache.maven.plugins:maven-antrun-plugin:run@make-deb
+
+# optional if no need to rebuild it
+cd ../../src/mica-search-es
+mvn clean install
+```

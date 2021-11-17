@@ -6,23 +6,23 @@
 # HTTP server configuration
 server:
     port: 8082
-    
+
 
 https:
     port: 8445
 
 # Opal: data dictionaries, summaries and taxonomies
 opal:
-    url: https://opal:8080
+    url: https://opal:8443
     username: administrator
     password: password
 
 # Agate: user realm and application services configuration
 agate:
-    url: https://agate:8081
+    url: https://agate:8444
     application:
         name: mica
-        key: changeit
+        key: iOs2uj4I4p9jYPt911KSnZRqFQufaT
 
 # Elasticsearch: search engine configuration
 elasticsearch:
