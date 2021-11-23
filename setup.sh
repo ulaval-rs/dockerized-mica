@@ -4,7 +4,7 @@ export MICA_SEARCH_ES_BRANCH=master
 # download repository content
 mkdir src/
 cd src
-git clone https://github.com/ulaval-rs/mica2.git
+git clone https://github.com/obiba/mica2.git
 cd mica2
 git checkout $MICA_BRANCH
 

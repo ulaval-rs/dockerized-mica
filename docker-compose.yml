@@ -16,7 +16,7 @@ services:
                         - AGATE_HOST=agate
                         - AGATE_PORT=8444
                 volumes:
-                        - ./config/mica:/srv
+                        - config_mica:/srv
         mongo:
                 image: mongo
         opal:
@@ -33,7 +33,7 @@ services:
                         - AGATE_HOST=agate
                         - AGATE_PORT=8444
                 volumes:
-                        - ./config/opal:/srv
+                        - config_opal:/srv
         agate:
                 image: obiba/agate
                 ports:
@@ -48,4 +48,9 @@ services:
                         - RECAPTCHA_SITE_KEY=6Lfo7gYTAAAAAOyl8_MHuH-AVBzRDtpIuJrjL3Pb
                         - RECAPTCHA_SECRET_KEY=6Lfo7gYTAAAAADym-vSDvPBeBCXaxIprA0QXLk_b
                 volumes:
-                        - ./config/agate:/srv
+                        - config_agate:/srv
+
+volumes:
+        config_mica: null
+        config_agate: null
+        config_opal: null
