@@ -4,8 +4,7 @@ services:
                 build: .
                 ports:
                         - "8872:8082"
-                links:
-                        - mongo
+                        - "8835:8445"
                 environment:
                         - MICA_ADMINISTRATOR_PASSWORD=password
                         - MICA_ANONYMOUS_PASSWORD=password
@@ -19,13 +18,13 @@ services:
                         - config_mica:/srv
         mongo:
                 image: mongo
+                volumes:
+                        - mongodb:/data/db
         opal:
-                image: obiba/opal
+                image: obiba/opal:latest
                 ports:
                         - "8833:8443"
                         - "8870:8080"
-                links:
-                        - mongo
                 environment:
                         - OPAL_ADMINISTRATOR_PASSWORD=password
                         - MONGO_HOST=mongo
@@ -35,12 +34,10 @@ services:
                 volumes:
                         - config_opal:/srv
         agate:
-                image: obiba/agate
+                image: obiba/agate:latest
                 ports:
                         - "8834:8444"
                         - "8871:8081"
-                links:
-                        - mongo
                 environment:
                         - AGATE_ADMINISTRATOR_PASSWORD=password
                         - MONGO_HOST=mongo
@@ -51,6 +48,7 @@ services:
                         - config_agate:/srv
 
 volumes:
+        mongodb: null
         config_mica: null
         config_agate: null
         config_opal: null
