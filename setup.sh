@@ -1,4 +1,4 @@
-export MICA_BRANCH=master
+export MICA_BRANCH=mica-4.5.x
 export MICA_SEARCH_ES_BRANCH=master
 
 # download repository content
