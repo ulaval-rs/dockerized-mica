@@ -15,7 +15,7 @@ RUN cd /usr/share/ && \
     unzip -q /tmp/mica2-*-dist.zip && \
     rm /tmp/mica2-*-dist.zip && \
     mv mica2-* mica2
-RUN adduser --system --home $MICA_HOME --no-create-home --disabled-password -u 1000 mica
+RUN adduser --system --home $MICA_HOME --no-create-home --disabled-password mica
 
 # plugins setup
 WORKDIR $DEFAULT_PLUGINS_DIR
